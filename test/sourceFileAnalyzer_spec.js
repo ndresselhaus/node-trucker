@@ -18,17 +18,22 @@ describe('sourceFileAnalyzer', function() {
       });
     });
     it('has requires', function() {
-      expect(requires.length).to.equal(2);
+      expect(requires.length).to.equal(3);
     });
     it('decorates require in a different location with full path', function() {
       var expected;
       expected = path.normalize(path.join(examplePath, 'tully/catelyn'));
-      expect(requires[1].fullPath).to.equal(expected);
+      expect(requires[2].fullPath).to.equal(expected);
     });
     it('decorates require in the same location with full path', function() {
       var expected;
       expected = path.normalize(path.join(examplePath, 'stark/robb'));
-      expect(requires[0].fullPath).to.equal(expected);
+      expect(requires[1].fullPath).to.equal(expected);
+    });
+    it('decorates required jsx files', function() {
+      var expected;
+      expected = path.normalize(path.join(examplePath, 'stark/bran/index.jsx'));
+      expect(requires[0].filePath).to.equal(expected);
     });
   });
 });
