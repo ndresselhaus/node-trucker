@@ -58,6 +58,11 @@ Find files that are not required by any other source files in given path
 
 ```trucker --unused [path]```
 
+You can also specify entrypoints to print out files that are not required anywhere in the require trees from those entrypoints.
+File paths for entrypoints are relative to the base directory 
+
+```--unused [path] --entrypoint server/server.js --entrypoint app/App.jsx``` 
+
 ## Examples
 
 in the examples directory (provided), you can try the following (add ```-n``` for dry run mode if desired):

@@ -27,7 +27,9 @@ var options = optimist
   .describe('q', 'Suppress output')
   .string('e')
   .alias('e', 'exclude')
-  .describe('e', 'Add file glob pattern to exclude (repeatable)');
+  .describe('e', 'Add file glob pattern to exclude (repeatable)')
+  .string('entrypoint')
+  .describe('entrypoint', 'Print files not required from anywhere in the require tree starting from this file (repeatable)');
 
 var argv = options.argv,
   fileCount = argv._length,
